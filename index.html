@@ -4,22 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portafolio de Actividades Digitales</title>
-    <!-- Google Fonts & Icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Google Fonts & Font Awesome Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
         :root {
-            /* FONDO BLANCO Y PALETA LIMPIA */
+            /* PALETA DE COLORES PROFESIONAL Y MODERNA (FONDO BLANCO) */
             --bg-primary: #ffffff;
             --bg-secondary: #ffffff;
             --card-bg: #ffffff;
             --accent-main: #10a5e9;
             --accent-hover: #0284c7;
-            --text-main: #1a202c;
+            --text-main: #1e293b;
             --text-muted: #64748b;
             --border-color: #e2e8f0;
-            --shadow-color: rgba(0, 0, 0, 0.06);
+            --shadow-color: rgba(0, 0, 0, 0.05);
         }
 
         * {
@@ -49,7 +49,7 @@
         }
 
         .header-container {
-            max-width: 1200px;
+            max-width: 1250px;
             margin: 0 auto;
             padding: 1rem 2rem;
             display: flex;
@@ -58,7 +58,7 @@
             gap: 1.5rem;
         }
 
-        /* Marca / Logo de la Universidad convertido en Enlace */
+        /* Marca / Logo de la Universidad enlazado */
         .header-brand {
             display: flex;
             align-items: center;
@@ -176,35 +176,199 @@
             text-align: center;
         }
 
-        /* Hero Section */
-        .hero {
-            padding: 4rem 2rem 2rem;
+        /* Hero Banner - Estructura en 3 Columnas */
+        .hero-banner {
+            max-width: 1250px;
+            margin: 2rem auto 1rem;
+            padding: 0 2rem;
+        }
+
+        .hero-card {
+            background-color: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 2.5rem 2rem 2rem;
+            box-shadow: 0 10px 30px var(--shadow-color);
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 240px 1fr 260px;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        /* Columna 1: Autor */
+        .author-column {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             text-align: center;
-            max-width: 900px;
-            margin: 0 auto;
+            border-right: 1px solid var(--border-color);
+            padding-right: 1.5rem;
         }
 
-        .hero h1 {
-            font-size: 2.6rem;
+        .photo-frame {
+            padding: 5px;
+            background: #ffffff;
+            border: 3px solid var(--accent-main);
+            border-radius: 14px;
+            box-shadow: 0 6px 18px rgba(16, 165, 233, 0.18);
             margin-bottom: 1rem;
+            transition: transform 0.3s ease;
+        }
+
+        .photo-frame:hover {
+            transform: scale(1.03);
+        }
+
+        .author-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 9px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .author-name {
+            font-size: 1.05rem;
+            font-weight: 700;
             color: var(--text-main);
-            line-height: 1.2;
+            letter-spacing: 0.3px;
+            margin-bottom: 0.3rem;
+            text-transform: uppercase;
+            line-height: 1.3;
         }
 
-        .hero h1 span {
+        .author-title {
+            font-size: 0.78rem;
+            font-weight: 600;
             color: var(--accent-main);
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            line-height: 1.4;
         }
 
-        .hero p {
-            color: var(--text-muted);
-            font-size: 1.1rem;
-            line-height: 1.7;
+        /* Columna 2: Título Central */
+        .title-column {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            padding: 0 0.5rem;
+        }
+
+        .project-badge {
+            align-self: center;
+            background-color: rgba(16, 165, 233, 0.1);
+            color: var(--accent-main);
+            padding: 0.35rem 0.9rem;
+            border-radius: 20px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            margin-bottom: 1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .project-title {
+            font-size: 1.35rem;
+            color: var(--text-main);
+            line-height: 1.55;
+            font-weight: 600;
+            letter-spacing: -0.2px;
+        }
+
+        /* Columna 3: Mentores / Tutores */
+        .mentors-column {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            border-left: 1px solid var(--border-color);
+            padding-left: 1.5rem;
+        }
+
+        .mentor-card {
+            background-color: #f8fafc;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1rem 1.2rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .mentor-card:hover {
+            border-color: rgba(16, 165, 233, 0.4);
+        }
+
+        .mentor-role {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--accent-main);
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-bottom: 0.3rem;
+        }
+
+        .mentor-name {
+            font-size: 0.98rem;
+            font-weight: 600;
+            color: var(--text-main);
+            line-height: 1.3;
+        }
+
+        /* MOSAICO DE 5 FOTOS CON EFECTO DE AMPLIACIÓN (ZOOM & POP-OUT) */
+        .hero-gallery {
+            margin-top: 2rem;
+            padding-top: 1.8rem;
+            border-top: 1px solid var(--border-color);
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 1.2rem;
+        }
+
+        .gallery-item {
+            overflow: hidden;
+            border-radius: 12px;
+            height: 125px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 10px var(--shadow-color);
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
+                        box-shadow 0.35s ease, 
+                        border-color 0.35s ease, 
+                        z-index 0.35s ease;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.45s ease, filter 0.35s ease;
+        }
+
+        /* EFECTO HOVER: AMPLIACIÓN Y RESALTE */
+        .gallery-item:hover {
+            transform: scale(1.12) translateY(-4px); /* Amplía el marco y lo eleva */
+            box-shadow: 0 12px 25px rgba(16, 165, 233, 0.28); /* Sombra azulada */
+            border-color: var(--accent-main);
+            z-index: 10; /* Se superpone limpiamente sobre las fotos contiguas */
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.15); /* Zoom interno a la imagen */
         }
 
         /* Main Content Grid */
         main {
-            max-width: 1200px;
-            margin: 2rem auto;
+            max-width: 1250px;
+            margin: 1rem auto 2rem;
             padding: 0 2rem;
             flex: 1;
         }
@@ -319,7 +483,7 @@
         }
 
         /* Responsive Mobile Layout */
-        @media (max-width: 900px) {
+        @media (max-width: 992px) {
             .header-container {
                 flex-direction: column;
                 align-items: flex-start;
@@ -341,6 +505,46 @@
                 border: none;
                 padding-left: 1.2rem;
                 background-color: transparent;
+            }
+
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .author-column {
+                border-right: none;
+                border-bottom: 1px solid var(--border-color);
+                padding-right: 0;
+                padding-bottom: 1.5rem;
+            }
+
+            .mentors-column {
+                border-left: none;
+                border-top: 1px solid var(--border-color);
+                padding-left: 0;
+                padding-top: 1.5rem;
+            }
+
+            .project-title {
+                font-size: 1.2rem;
+            }
+
+            .hero-gallery {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            .gallery-item:nth-child(4), .gallery-item:nth-child(5) {
+                display: none;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-gallery {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .gallery-item:nth-child(3) {
+                display: none;
             }
         }
     </style>
@@ -410,10 +614,67 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <h1>Portafolio Digital de <span>Recursos y Actividades</span></h1>
-        <p>Alojado en GitHub Pages. Explora cada uno de los productos educativos e instruccionales agrupados por categoría.</p>
+    <!-- Hero Section - Banner principal con datos + Mosaico de 5 fotos -->
+    <section class="hero-banner">
+        <div class="hero-card">
+            
+            <!-- Grid superior (Autor, Título, Directores) -->
+            <div class="hero-grid">
+                
+                <!-- Columna 1: Foto y Datos del Autor -->
+                <div class="author-column">
+                    <div class="photo-frame">
+                        <img src="https://lh3.googleusercontent.com/d/1pRqs4Q3_6vyiJSIAeAk5NPS4TZixH3Jb" alt="ADRIÁN ANDRÉS LÓPEZ PÉREZ" class="author-photo">
+                    </div>
+                    <h2 class="author-name">ADRIÁN ANDRÉS LÓPEZ PÉREZ</h2>
+                    <p class="author-title">NORMALISTA SUPERIOR - INGENIERO DE SOFTWARE</p>
+                </div>
+
+                <!-- Columna 2: Título del Proyecto -->
+                <div class="title-column">
+                    <div class="project-badge">
+                        <i class="fa-solid fa-graduation-cap"></i> Proyecto de Investigación
+                    </div>
+                    <h1 class="project-title">
+                        Fortalecimiento de la Competencia Lectora a través del Aprendizaje Basado en Secuencias Didácticas y Herramientas Tecnológicas de Gamificación en estudiantes del grado Sexto de la I. E Técnica Remedio Solano del municipio de Barrancas – La Guajira.
+                    </h1>
+                </div>
+
+                <!-- Columna 3: Directora y Tutor -->
+                <div class="mentors-column">
+                    <div class="mentor-card">
+                        <span class="mentor-role"><i class="fa-solid fa-user-tie"></i> Directora Trabajo de Grado</span>
+                        <h4 class="mentor-name">Milagro de Jesús Pérez Pérez</h4>
+                    </div>
+
+                    <div class="mentor-card">
+                        <span class="mentor-role"><i class="fa-solid fa-chalkboard-user"></i> Tutor de Asignatura</span>
+                        <h4 class="mentor-name">Edwin Fernando Farfán Bareño</h4>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- MOSAICO DE 5 FOTOS CON EFECTO DE AMPLIACIÓN -->
+            <div class="hero-gallery">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=400&auto=format&fit=crop" alt="Contexto educativo 1">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=400&auto=format&fit=crop" alt="Tecnología educativa 2">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=400&auto=format&fit=crop" alt="Trabajo colaborativo 3">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?q=80&w=400&auto=format&fit=crop" alt="Gamificación 4">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?q=80&w=400&auto=format&fit=crop" alt="Estudiantes 5">
+                </div>
+            </div>
+
+        </div>
     </section>
 
     <!-- Main Content -->
